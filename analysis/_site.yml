@@ -1,14 +1,20 @@
-name: myproject
+name: PKM2 
 output_dir: ../docs
 navbar:
-  title: myproject
+  title: myproject PKM2
   left:
-  - text: Home
+  - text: Contents
     href: index.html
-  - text: About
-    href: about.html
-  - text: License
-    href: license.html
+  - text: Data preparation
+    href: 0-preparation.html
+  - text: Clustering analysis
+    href: 1-clustering.html
+  - text: Dimensionality reduction
+    href: 2-dimred.html
+  - text: Differential analysis
+    href: 3-differential.html
+  - text: PKM2 Nicolas
+    href: 4-PKM2.html
   right:
   - icon: fa-github
     text: Source code
@@ -17,5 +23,5 @@ output:
   workflowr::wflow_html:
     toc: yes
     toc_float: yes
-    theme: cosmo
+    theme: simplex
     highlight: textmate

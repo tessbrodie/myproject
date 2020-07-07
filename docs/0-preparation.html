@@ -11,7 +11,7 @@
 
 <meta name="author" content="Tess Brodie" />
 
-<meta name="date" content="2020-07-03" />
+<meta name="date" content="2020-07-07" />
 
 <title>Data preparation</title>
 
@@ -397,14 +397,14 @@ div.tocify {
 
 <h1 class="title toc-ignore">Data preparation</h1>
 <h4 class="author">Tess Brodie</h4>
-<h4 class="date">2020-07-03</h4>
+<h4 class="date">2020-07-07</h4>
 
 </div>
 
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -413,7 +413,7 @@ div.tocify {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -422,10 +422,10 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-07-03
+<strong>Last updated:</strong> 2020-07-07
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>myproject/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -441,12 +441,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
 </div>
 </div>
 </div>
@@ -513,16 +513,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomtessbrodiemyprojecttree803452c7f39207a567a7c0a7ad209b62b9191674targetblank803452ca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/tessbrodie/myproject/tree/803452c7f39207a567a7c0a7ad209b62b9191674" target="_blank">803452c</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomtessbrodiemyprojecttreed343510c2336351c47ee83cbab97da8becf7ed5btargetblankd343510a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/tessbrodie/myproject/tree/d343510c2336351c47ee83cbab97da8becf7ed5b" target="_blank">d343510</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomtessbrodiemyprojecttree803452c7f39207a567a7c0a7ad209b62b9191674targetblank803452ca" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomtessbrodiemyprojecttreed343510c2336351c47ee83cbab97da8becf7ed5btargetblankd343510a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/tessbrodie/myproject/tree/803452c7f39207a567a7c0a7ad209b62b9191674" target="_blank">803452c</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/tessbrodie/myproject/tree/d343510c2336351c47ee83cbab97da8becf7ed5b" target="_blank">d343510</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -530,14 +530,16 @@ Note that you need to be careful to ensure that all relevant files for the analy
 <pre><code>
 Ignored files:
     Ignored:    .Rhistory
+    Ignored:    analysis/1-clustering_cache/
+    Ignored:    analysis/2-dimred_cache/
+    Ignored:    analysis/3-differential_cache/
+    Ignored:    analysis/4-PKM2_cache/
+    Ignored:    analysis/site_libs/
     Ignored:    data/fcs/
 
 Untracked files:
     Untracked:  SA_plot.pdf
-    Untracked:  analysis/1-clustering_cache/
-    Untracked:  analysis/2-dimred_cache/
-    Untracked:  analysis/3-differential_cache/
-    Untracked:  analysis/4-PKM2_cache/
+    Untracked:  analysis/SA_plot.pdf
     Untracked:  output/DA-results_12hours.csv
     Untracked:  output/DA-results_24hours.csv
     Untracked:  output/DA-results_3hours.csv
@@ -553,6 +555,11 @@ Untracked files:
 
 Unstaged changes:
     Modified:   .gitignore
+    Modified:   analysis/0-preparation.Rmd
+    Modified:   analysis/1-clustering.Rmd
+    Modified:   analysis/2-dimred.Rmd
+    Modified:   analysis/3-differential.Rmd
+    Modified:   analysis/4-PKM2.Rmd
     Modified:   analysis/_site.yml
     Deleted:    analysis/about.Rmd
     Deleted:    analysis/license.Rmd
@@ -594,6 +601,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/tessbrodie/myproject/d343510c2336351c47ee83cbab97da8becf7ed5b/docs/0-preparation.html" target="_blank">d343510</a>
+</td>
+<td>
+Tess Brodie
+</td>
+<td>
+2020-07-03
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -672,7 +696,8 @@ Publish the initial files for myproject PKM2
 <div id="load-packages" class="section level3">
 <h3>Load packages</h3>
 <pre class="r"><code>library(CATALYST)
-library(dplyr)</code></pre>
+library(dplyr)
+library(workflowr)</code></pre>
 </div>
 <div id="load-data" class="section level3">
 <h3>Load data</h3>
@@ -694,12 +719,12 @@ sce &lt;- prepData(file.path(&quot;data&quot;, &quot;fcs&quot;), panel, md)</cod
 <div id="cell-counts" class="section level1">
 <h1>Cell counts</h1>
 <pre class="r"><code>plotCounts(sce, group_by = &quot;sample_id&quot;, color_by = &quot;condition&quot;)</code></pre>
-<p><img src="figure/0-preparation.Rmd/plotCounts-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="figure/0-preparation.Rmd/plotCounts-1.svg" width="576" style="display: block; margin: auto;" /></p>
 </div>
 <div id="pseudobulk-level-mds-plot" class="section level1">
 <h1>Pseudobulk-level MDS plot</h1>
 <pre class="r"><code>pbMDS(sce)</code></pre>
-<p><img src="figure/0-preparation.Rmd/pbMDS-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="figure/0-preparation.Rmd/pbMDS-1.svg" width="768" style="display: block; margin: auto;" /></p>
 <div id="split-by-condition" class="section level2 tabset">
 <h2>…split by condition</h2>
 <pre class="r"><code>for (i in levels(sce$condition)[-1]) {
@@ -708,23 +733,23 @@ sce &lt;- prepData(file.path(&quot;data&quot;, &quot;fcs&quot;), panel, md)</cod
 }</code></pre>
 <div id="hours" class="section level3">
 <h3>3hours</h3>
-<p><img src="figure/0-preparation.Rmd/pbMDS-condition-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/0-preparation.Rmd/pbMDS-condition-1.svg" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="hours-1" class="section level3">
 <h3>6hours</h3>
-<p><img src="figure/0-preparation.Rmd/pbMDS-condition-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/0-preparation.Rmd/pbMDS-condition-2.svg" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="hours-2" class="section level3">
 <h3>12hours</h3>
-<p><img src="figure/0-preparation.Rmd/pbMDS-condition-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/0-preparation.Rmd/pbMDS-condition-3.svg" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="hours-3" class="section level3">
 <h3>24hours</h3>
-<p><img src="figure/0-preparation.Rmd/pbMDS-condition-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/0-preparation.Rmd/pbMDS-condition-4.svg" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="hours-4" class="section level3">
 <h3>48hours</h3>
-<p><img src="figure/0-preparation.Rmd/pbMDS-condition-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/0-preparation.Rmd/pbMDS-condition-5.svg" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 </div>
@@ -732,7 +757,7 @@ sce &lt;- prepData(file.path(&quot;data&quot;, &quot;fcs&quot;), panel, md)</cod
 <h1>Median marker expression</h1>
 <pre class="r"><code>plotExprHeatmap(sce, scale = &quot;last&quot;, q = 0, 
     by = &quot;sample_id&quot;, row_anno = &quot;condition&quot;)</code></pre>
-<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-1.svg" width="960" style="display: block; margin: auto;" /></p>
 <div id="split-by-condition-1" class="section level2 tabset">
 <h2>…split by condition</h2>
 <pre class="r"><code>for (i in levels(sce$condition)[-1]) {
@@ -743,23 +768,23 @@ sce &lt;- prepData(file.path(&quot;data&quot;, &quot;fcs&quot;), panel, md)</cod
 }</code></pre>
 <div id="hours-5" class="section level3">
 <h3>3hours</h3>
-<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-condition-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-condition-1.svg" width="960" style="display: block; margin: auto;" /></p>
 </div>
 <div id="hours-6" class="section level3">
 <h3>6hours</h3>
-<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-condition-2.png" width="960" style="display: block; margin: auto;" /></p>
+<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-condition-2.svg" width="960" style="display: block; margin: auto;" /></p>
 </div>
 <div id="hours-7" class="section level3">
 <h3>12hours</h3>
-<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-condition-3.png" width="960" style="display: block; margin: auto;" /></p>
+<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-condition-3.svg" width="960" style="display: block; margin: auto;" /></p>
 </div>
 <div id="hours-8" class="section level3">
 <h3>24hours</h3>
-<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-condition-4.png" width="960" style="display: block; margin: auto;" /></p>
+<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-condition-4.svg" width="960" style="display: block; margin: auto;" /></p>
 </div>
 <div id="hours-9" class="section level3">
 <h3>48hours</h3>
-<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-condition-5.png" width="960" style="display: block; margin: auto;" /></p>
+<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-condition-5.svg" width="960" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 </div>

@@ -7,9 +7,10 @@ output:
     toc_depth: 2
 ---
 
-```{r setup, include = FALSE}
+```{r setup, include = FALSE, dev='svg'}
 knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 knitr::opts_chunk$set(autodep = TRUE, cache = TRUE, cache.lazy = FALSE)
+knitr::opts_chunk$set(dev = 'svg')
 ```
 
 ### Load packages
@@ -17,6 +18,7 @@ knitr::opts_chunk$set(autodep = TRUE, cache = TRUE, cache.lazy = FALSE)
 ```{r load-libs, message = FALSE, warning = FALSE}
 library(CATALYST)
 library(ggplot2)
+library(workflowr)
 ```
 
 ### Load data

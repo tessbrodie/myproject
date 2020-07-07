@@ -7,9 +7,10 @@ output:
     toc_depth: 2
 ---
 
-```{r setup, include = FALSE}
+```{r setup, include = FALSE, dev='svg'}
 knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 knitr::opts_chunk$set(autodep = TRUE, cache = TRUE, cache.lazy = FALSE)
+knitr::opts_chunk$set(dev = 'svg')
 ```
 
 ### Load packages
@@ -18,6 +19,7 @@ knitr::opts_chunk$set(autodep = TRUE, cache = TRUE, cache.lazy = FALSE)
 library(CATALYST)
 library(dplyr)
 library(flowCore)
+library(workflowr)
 ```
 
 ### Load data
@@ -61,7 +63,7 @@ sce <- mergeClusters(sce, k = "meta25", table = anno, id = "mm")
 
 # heatmap of median type-marker expressions
 plotExprHeatmap(sce, features = type_markers(sce), 
-    by = "cluster_id", k = "mm", row_anno = FALSE)
+    by = "cluster_id", k = "mm", row_anno = FALSE, bars = TRUE)
 ```
 
 ## Dimensionality reduction after manual merging
