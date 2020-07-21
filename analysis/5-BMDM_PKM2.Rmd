@@ -1,0 +1,282 @@
+---
+title: "BMDM and PKM2"
+author: "Tess Brodie"
+date: University of Bern, DBMR, Visceral and Transplantation Surgery lab
+output: 
+  html_document:
+    toc_depth: 2
+---
+
+
+## Introduction
+
+```{r setup, include=FALSE, dev='svg'}
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+knitr::opts_chunk$set(autodep = TRUE, cache = TRUE, cache.lazy = FALSE)
+knitr::opts_chunk$set(dev = 'svg')
+```
+
+
+### Load packages
+
+```{r load-libs, message = FALSE, warning = FALSE}
+library(CATALYST)
+library(dplyr)
+library(flowCore)
+library(ggplot2)
+library(diffcyt)
+library(cowplot)
+library(viridis)
+library(RColorBrewer)
+library(workflowr)
+```
+
+### Load data
+
+```{r}
+sce <- readRDS(file.path("output", "sce.rds"))
+
+```
+
+
+## Differential State analysis on BMDM
+We see that the BMDM have increasing amounts of PKM2 over time after PhX and we want to see if the increase in PKM2 expression is associated with other significant phenotypic changes in this subset. 
+
+```{r}
+# create design matrix
+design <- createDesignMatrix(ei(sce), "condition")
+colnames(design) <- gsub("condition", "", colnames(design))
+
+# run DS analysis for control vs. each timepoint
+for (i in colnames(design)[-1]) {
+  # create contrast matrix
+  contrast <- createContrast(as.numeric(colnames(design) == i))
+    
+  # run DS analysis & extract results table
+  res_DS <- diffcyt(sce, clustering_to_use = "mm",
+                  analysis_type = "DS", method_DS = "diffcyt-DS-limma",
+                  design = design, contrast = contrast, verbose = FALSE)
+
+  # extract results table
+  tbl_DS <- rowData(res_DS$res)
+  
+   # include all results for selected cluster
+  k <- metadata(res_DS$res)$clustering_name
+  sub1 <- filterSCE(sce, cluster_id == "BMDM", k = k)
+  
+  sub1
+  
+
+  # write table to .csv
+    fn <- file.path("output", sprintf("DS-results_%s.csv", i))
+    write.csv(tbl_DS, fn, row.names = FALSE)
+    
+
+   # subset control and timepoint of interest
+    sub <- filterSCE(sub1, condition %in% c("control", !!i))
+    
+    
+  # plot differential heatmap
+    p <- plotDiffHeatmap(sub, tbl_DS, all = TRUE, col_anno = "condition")
+    cat("## ", i, "\n"); print(p); cat("\n\n")
+} 
+```
+
+### Plot all timepoints and significant changes in BMDM
+This needs editing because now it is showing all timepoints, but the significance shown is for control vs 48 hours.  It is very tricky to show the p values for each condition in one graph... I'm not sure how that could be done.  Maybe the heatmap of the target expression over time and the fold change is enough and we could report the P values for each timepoint in a table?  Or we compare the control to all the other conditions globally... This is to be discussed.
+```{r}
+# create design matrix
+design <- createDesignMatrix(ei(sce), "condition")
+colnames(design) <- gsub("condition", "", colnames(design))
+
+# run DS analysis for control vs. each timepoint
+for (i in colnames(design)[-1]) 
+  # create contrast matrix
+  contrast <- createContrast(as.numeric(colnames(design) == i))
+    
+  # run DS analysis & extract results table
+  res_DS <- diffcyt(sce, clustering_to_use = "mm",
+                  analysis_type = "DS", method_DS = "diffcyt-DS-limma",
+                  design = design, contrast = contrast, verbose = FALSE)
+
+  # extract results table
+  tbl_DS <- rowData(res_DS$res)
+  
+   # include all results for selected cluster
+  k <- metadata(res_DS$res)$clustering_name
+  sub2 <- filterSCE(sce, cluster_id == "BMDM", k = k)
+  
+  sub2
+  
+
+  # write table to .csv (doesnt work here)
+    fn <- file.path("output", sprintf("DS-results_%s.csv", i))
+    write.csv(tbl_DS, fn, row.names = FALSE)
+    
+    
+  # plot differential heatmap
+    p <- plotDiffHeatmap(sub2, tbl_DS, all = TRUE, col_anno = "condition")
+    cat("## ", i, "\n"); print(p); cat("\n\n")
+ 
+```
+
+
+
+### Filter on BMDM 
+
+```{r}
+sceB <- filterSCE(sce, k = "mm",
+               cluster_id %in% "BMDM")
+
+plot_grid(
+  plotDR(sce, dr= "TSNE", color_by = "mm"),
+  plotDR(sceB, dr= "TSNE", color_by = "mm"))
+```
+
+### Target expression in BMDM for Targets that change significantly over time
+
+```{r}
+plotExprHeatmap(sceB, features = c("PKM2", "CD93", "CD115", "CD49b_DX5", "CD161", "CD80", "I_A_I_E", "CD196", "Arginase_1", "CD64", "CD274", "CD86"),
+    row_anno = FALSE,   # don't annotate samples
+    row_clust = FALSE,  # keep samples in original order
+    col_clust = TRUE,  # keep markers in original order
+    bin_anno = FALSE,   # don't annotate bins
+    bars = FALSE,       # don't include sample sizes
+    scale = "last")     # aggregate, then scale
+    
+
+```
+
+## TSNE of BMDMs colored by condition
+
+```{r}
+
+sceB <- runDR(sceB, dr = "TSNE", features = NULL)
+plotDR(sceB, dr = "TSNE", color_by = "condition")
+  
+```
+
+##Facet by condition
+
+```{r}
+plotDR(sceB, dr = "TSNE", color_by = "condition", facet_by = "condition")
+```
+
+## Plot BMDM targets that change significantly in BMDMs TSNE
+
+```{r plotDR-expression, fig.width = 12, fig.height = 5}
+p <- plotDR(sceB, dr = "TSNE", color_by = c("PKM2", "CD93", "CD115", "CD49b_DX5", "CD161", "CD80", "I_A_I_E", "CD196", "Arginase_1", "CD64", "CD274", "CD86"))
+p$facet$params$ncol <- 4; p
+```
+
+## Number of BMDM per sample
+
+```{r}
+plotCounts(sceB, 
+           group_by = "sample_id", 
+           color_by = "condition")
+```
+
+## Cluster BMDM into subsets
+
+
+```{r cluster, message = FALSE}
+sceB <- cluster(sceB, maxK = 10)
+
+```
+
+## PLot expression heatmap of BMDM subsets
+
+```{r plotExprHeatmap, fig.width = 6, fig.height = 5}
+plotExprHeatmap(sceB, features = type_markers(sce), 
+    by = "cluster_id", k = "meta10", row_anno = FALSE, bars = TRUE)
+```
+
+## Plot multi heatmap with BMDM subsets
+
+```{r}
+plotMultiHeatmap(sceB, 
+                 hm1 = "type", hm2 = "state", 
+                 k = "meta10", row_anno = FALSE,
+                 col_dend = c(FALSE, FALSE))
+```
+
+
+## 10 BMDM clusters overlaid on TSNE plot
+```{r}
+plotDR(sceB, dr = "TSNE", color_by = "meta10")
+
+```
+
+
+
+##Differential Abundances analysis with BMDM subsets
+
+# DA analysis {.tabset}
+
+```{r da, results = "asis", fig.width = 8, fig.height = 6}
+# create design matrix
+design <- createDesignMatrix(ei(sceB), "condition")
+colnames(design) <- gsub("condition", "", colnames(design))
+
+# run DA analysis for control vs. each timepoint
+for (i in colnames(design)[-1]) {
+    # create contrast matrix
+    contrast <- createContrast(as.numeric(colnames(design) == i))
+    
+    # run DA analysis
+    res <- diffcyt(sceB, clustering_to_use = "meta10",
+        analysis_type = "DA", method_DA = "diffcyt-DA-edgeR",
+        design = design, contrast = contrast, verbose = FALSE)
+    
+    # extract results table
+    tbl <- rowData(res$res)
+    
+    # write table to .csv
+    fn <- file.path("output", sprintf("DA-resultsBMDM_%s.csv", i))
+    write.csv(tbl, fn, row.names = FALSE)
+    
+    # subset control and timepoint of interest
+    sub <- filterSCE(sceB, condition %in% c("control", !!i))
+    
+    # plot differential heatmap
+    p <- plotDiffHeatmap(sub, tbl, all = TRUE, col_anno = "condition")
+    cat("## ", i, "\n"); print(p); cat("\n\n")
+}
+```
+
+##Differential state Analysis
+
+
+```{r}
+# create design matrix
+design <- createDesignMatrix(ei(sceB), "condition")
+colnames(design) <- gsub("condition", "", colnames(design))
+
+# run DS analysis for control vs. each timepoint
+for (i in colnames(design)[-1]) {
+  # create contrast matrix
+  contrast <- createContrast(as.numeric(colnames(design) == i))
+    
+  # run DS analysis & extract results table
+  res_DS <- diffcyt(sce, clustering_to_use = "meta10",
+                  analysis_type = "DS", method_DS = "diffcyt-DS-limma",
+                  design = design, contrast = contrast, verbose = FALSE)
+
+  # extract results table
+  tbl_DS <- rowData(res_DS$res)
+
+  # write table to .csv
+    fn <- file.path("output", sprintf("DS-resultsBMDM_%s.csv", i))
+    write.csv(tbl_DS, fn, row.names = FALSE)
+    
+  # subset control and timepoint of interest
+    sub <- filterSCE(sceB, condition %in% c("control", !!i))
+    
+  # plot differential heatmap
+    p <- plotDiffHeatmap(sub, tbl_DS, all = TRUE, col_anno = "condition")
+    cat("## ", i, "\n"); print(p); cat("\n\n")
+} 
+```
+
+

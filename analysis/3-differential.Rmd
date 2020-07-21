@@ -1,6 +1,6 @@
 ---
 title: "Differential analysis"
-date: "`r format(Sys.Date())`"
+date: University of Bern, DBMR, Visceral and Transplantation Surgery lab
 author: Tess Brodie
 output: 
   html_document:

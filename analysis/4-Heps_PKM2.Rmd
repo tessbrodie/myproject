@@ -1,0 +1,167 @@
+---
+title: "Hepatocytes and PKM2"
+date: University of Bern, DBMR, Visceral and Transplantation Surgery lab
+author: Tess Brodie
+output: 
+   html_document:
+    toc_depth: 2
+---
+
+## Introduction
+
+```{r setup, include = FALSE, dev='svg'}
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+knitr::opts_chunk$set(autodep = TRUE, cache = TRUE, cache.lazy = FALSE)
+knitr::opts_chunk$set(dev = 'svg')
+```
+
+
+
+### Load packages
+
+```{r load-libs, message = FALSE, warning = FALSE}
+library(CATALYST)
+library(dplyr)
+library(flowCore)
+library(ggplot2)
+library(diffcyt)
+library(cowplot)
+library(viridis)
+library(RColorBrewer)
+library(workflowr)
+```
+
+### Load data
+
+```{r load-data}
+sce <- readRDS(file.path("output", "sce.rds"))
+```
+
+## Liver subsets with PKM2 expression over time
+
+```{r}
+plotMultiHeatmap(sce, 
+                 k = "mm", scale = "first",
+                 hm1 = "type", hm2 = "PKM2",
+                 row_anno = FALSE, col_clust = FALSE,
+                 row_clust = FALSE, col_anno = FALSE,
+                 bars = TRUE, perc = TRUE,
+                 hm2_pal = hcl.colors(10, palette = "Reds"))
+
+```
+
+### Liver subsets with Unknown population taken out for better heatmap visualization
+
+```{r}
+sceU <- filterSCE(sce, k = "mm",
+               cluster_id %in% c("B cells","BMDM", "cDCs",
+                                 "Granulocytes","Hepatocytes", "KCs", "LSECs",
+                                 "pDCs", "T cells"))
+plotMultiHeatmap(sceU, 
+                 k = "mm", scale = "first",
+                 hm1 = "type", hm2 = "PKM2",
+                 row_anno = FALSE, col_clust = FALSE,
+                 row_clust = FALSE, col_anno = FALSE,
+                 bars = TRUE, perc = TRUE,
+                 hm2_pal = hcl.colors(10, palette = "Reds", rev = TRUE))
+
+```
+### Another color combo
+
+```{r}
+plotMultiHeatmap(sceU, 
+                 k = "mm", scale = "first",
+                 hm1 = "type", hm2 = "PKM2",
+                 row_anno = FALSE, col_clust = FALSE,
+                 row_clust = FALSE, col_anno = FALSE,
+                 bars = TRUE, perc = TRUE)
+```
+
+
+## Hepatocytes and differential expression of PKM2
+*need help scaling second tsne plot
+
+```{r}
+sceH <- filterSCE(sce, k = "mm",
+               cluster_id %in% "Hepatocytes")
+
+plot_grid(
+  plotDR(sce, dr= "TSNE", color_by = "mm"),
+  plotDR(sceH, dr= "TSNE", color_by = "mm"))
+```
+
+## tSNE of hepatocytes
+
+```{r}
+sceH <- runDR(sceH, dr = "TSNE", features = NULL)
+plotDR(sceH, dr = "TSNE", color_by = "PKM2")
+
+```
+## PKM2 in Hepatocytes split by Condition
+
+```{r}
+plotDR(sceH, dr = "TSNE", color_by = "PKM2", facet_by = "condition")
+```
+
+
+## Proportion of hepatocytes per sample
+
+```{r}
+plotCounts(sceH, 
+           prop = TRUE,
+           group_by = "condition", 
+           color_by = "patient_id")
+```
+
+## Number of hepatocytes per sample
+
+```{r}
+plotCounts(sceH, 
+           group_by = "sample_id", 
+           color_by = "condition")
+
+```
+
+## Hepatocyte subsets and PKM2 over time
+We don't see one subset with all the PKM2
+
+```{r}
+sceH <- cluster(sceH, 
+                xdim = 10, ydim = 10, maxK = 3, 
+                verbose = FALSE)
+
+plotMultiHeatmap(sceH, 
+                 hm1 = "type", hm2 = "PKM2", 
+                 k = "meta3", row_anno = FALSE,
+                 col_dend = c(FALSE, TRUE))
+```
+
+### tSNE plot of hepatocyte subsets 
+
+```{r}
+plotDR(sceH, dr = "TSNE", color_by = "meta3")
+```
+
+
+### Cluster hepatocytes into many clusters to get a cluster with the PKM2 high cells in it
+We still don't see one subset with all the PKM2
+
+```{r}
+sceH <- cluster(sceH, 
+                xdim = 10, ydim = 10, maxK = 15, 
+                verbose = FALSE)
+
+plotMultiHeatmap(sceH, 
+                 hm1 = "type", hm2 = "PKM2", 
+                 k = "meta15", row_anno = FALSE,
+                 col_dend = c(FALSE, TRUE))
+
+
+```
+
+### Plot clusters on tSNE
+
+```{r}
+plotDR(sceH, dr = "TSNE", color_by = "meta15")
+```
+

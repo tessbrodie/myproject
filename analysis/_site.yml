@@ -13,8 +13,10 @@ navbar:
     href: 2-dimred.html
   - text: Differential analysis
     href: 3-differential.html
-  - text: PKM2 Nicolas
-    href: 4-PKM2.html
+  - text: Hepatocytes and PKM2
+    href: 4-Heps_PKM2.html
+  - text: BMDM and PKM2
+    href: 5-BMDM_PKM2.html
   right:
   - icon: fa-github
     text: Source code

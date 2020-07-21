@@ -1,6 +1,6 @@
 ---
 title: "Clustering analysis"
-date: "`r format(Sys.Date())`"
+date: University of Bern, DBMR, Visceral and Transplantation Surgery lab
 author: Tess Brodie
 output: 
   html_document:
@@ -65,11 +65,32 @@ sce <- mergeClusters(sce, k = "meta25", table = anno, id = "mm")
 plotExprHeatmap(sce, features = type_markers(sce), 
     by = "cluster_id", k = "mm", row_anno = FALSE, bars = TRUE)
 ```
+## heatmap with no Unknown population
+
+```{r}
+#Filter SCE to get rid of Unknown population
+sceU <- filterSCE(sce, k = "mm",
+               cluster_id %in% c("B cells","BMDM", "cDCs",
+                                 "Granulocytes","Hepatocytes", "KCs", "LSECs",
+                                 "pDCs", "T cells"))
+
+# heatmap of median type-marker expressions
+plotExprHeatmap(sceU, features = type_markers(sce), 
+    by = "cluster_id", k = "mm", row_anno = FALSE, bars = TRUE)
+
+```
+
+
 
 ## Dimensionality reduction after manual merging
 
 ```{r}
 plotDR(sce, dr = "TSNE", color_by = "mm")
+```
+## Plot Dimentionality reduction without Unknown population
+
+```{r}
+plotDR(sceU, dr = "TSNE", color_by = "mm")
 ```
 
 

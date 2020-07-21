@@ -26,10 +26,11 @@ output:
     - Differential Abundance analysis with main liver populations
     - Differential State analysis with main liver populations
     
-- [PKM2 paper Nicolas](4-PKM2.html):
+- [PKM2 paper Nicolas](4-Heps_PKM2.html):
     - Liver subsets with PKM2 expression over time
-    - Differential State analysis on BMDM
     - PKM2 on Hepatocytes
     - Hepatocyte clusters and PKM2 as heatmap and tSNE plot.
+- [BMDM and PKM2](5-BMDM_PKM2.html):
+
 
 
