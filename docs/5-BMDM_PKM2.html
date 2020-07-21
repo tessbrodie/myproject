@@ -12,7 +12,7 @@
 <meta name="author" content="Tess Brodie" />
 
 
-<title>Data preparation</title>
+<title>BMDM and PKM2</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -397,7 +397,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Data preparation</h1>
+<h1 class="title toc-ignore">BMDM and PKM2</h1>
 <h4 class="author">Tess Brodie</h4>
 <h4 class="date">University of Bern, DBMR, Visceral and Transplantation Surgery lab</h4>
 
@@ -502,37 +502,55 @@ The following chunks had caches available:
 cluster
 </li>
 <li>
-load-data
+da
 </li>
 <li>
 load-libs
 </li>
 <li>
-pbMDS-condition
-</li>
-<li>
-pbMDS
-</li>
-<li>
-plotCounts
-</li>
-<li>
-plotExprHeatmap-condition
+plotDR-expression
 </li>
 <li>
 plotExprHeatmap
 </li>
 <li>
-runDR
-</li>
-<li>
-save-data
-</li>
-<li>
 session-info-chunk-inserted-by-workflowr
 </li>
+<li>
+unnamed-chunk-1
+</li>
+<li>
+unnamed-chunk-10
+</li>
+<li>
+unnamed-chunk-11
+</li>
+<li>
+unnamed-chunk-2
+</li>
+<li>
+unnamed-chunk-3
+</li>
+<li>
+unnamed-chunk-4
+</li>
+<li>
+unnamed-chunk-5
+</li>
+<li>
+unnamed-chunk-6
+</li>
+<li>
+unnamed-chunk-7
+</li>
+<li>
+unnamed-chunk-8
+</li>
+<li>
+unnamed-chunk-9
+</li>
 </ul>
-<p>To ensure reproducibility of the results, delete the cache directory <code>0-preparation_cache</code> and re-run the analysis. To have workflowr automatically delete the cache directory prior to building the file, set <code>delete_cache = TRUE</code> when running <code>wflow_build()</code> or <code>wflow_publish()</code>.</p>
+<p>To ensure reproducibility of the results, delete the cache directory <code>5-BMDM_PKM2_cache</code> and re-run the analysis. To have workflowr automatically delete the cache directory prior to building the file, set <code>delete_cache = TRUE</code> when running <code>wflow_build()</code> or <code>wflow_publish()</code>.</p>
 </div>
 </div>
 </div>
@@ -575,12 +593,12 @@ Ignored files:
     Ignored:    analysis/4-Heps_PKM2_cache/
     Ignored:    analysis/4-PKM2_cache/
     Ignored:    analysis/5-BMDM_PKM2_cache/
+    Ignored:    analysis/site_libs/
     Ignored:    data/fcs/
 
 Untracked files:
     Untracked:  SA_plot.pdf
     Untracked:  analysis/SA_plot.pdf
-    Untracked:  analysis/site_libs/
     Untracked:  output/DA-resultsBMDM_12hours.csv
     Untracked:  output/DA-resultsBMDM_24hours.csv
     Untracked:  output/DA-resultsBMDM_3hours.csv
@@ -618,7 +636,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/0-preparation.Rmd</code>) and HTML (<code>docs/0-preparation.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/5-BMDM_PKM2.Rmd</code>) and HTML (<code>docs/5-BMDM_PKM2.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -647,7 +665,7 @@ Message
 Rmd
 </td>
 <td>
-<a href="https://github.com/tessbrodie/myproject/blob/2c2c90330e2ea281f291605cc18a80d03f608c6c/analysis/0-preparation.Rmd" target="_blank">2c2c903</a>
+<a href="https://github.com/tessbrodie/myproject/blob/2c2c90330e2ea281f291605cc18a80d03f608c6c/analysis/5-BMDM_PKM2.Rmd" target="_blank">2c2c903</a>
 </td>
 <td>
 Tess Brodie
@@ -657,159 +675,6 @@ Tess Brodie
 </td>
 <td>
 wflow_publish("analysis/*Rmd", all = TRUE, force = TRUE, update = TRUE,
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/tessbrodie/myproject/2c2c90330e2ea281f291605cc18a80d03f608c6c/docs/0-preparation.html" target="_blank">2c2c903</a>
-</td>
-<td>
-Tess Brodie
-</td>
-<td>
-2020-07-21
-</td>
-<td>
-wflow_publish("analysis/*Rmd", all = TRUE, force = TRUE, update = TRUE,
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/tessbrodie/myproject/cd02537832020384328120a89c4cdac4c99016f6/docs/0-preparation.html" target="_blank">cd02537</a>
-</td>
-<td>
-Tess Brodie
-</td>
-<td>
-2020-07-07
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/tessbrodie/myproject/blob/1655f9e90e1f4ac03599a054279784ad6e4d00bd/analysis/0-preparation.Rmd" target="_blank">1655f9e</a>
-</td>
-<td>
-Tess Brodie
-</td>
-<td>
-2020-07-07
-</td>
-<td>
-wflow_publish(“analysis/index.Rmd”, all = TRUE, force = TRUE,
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/tessbrodie/myproject/1655f9e90e1f4ac03599a054279784ad6e4d00bd/docs/0-preparation.html" target="_blank">1655f9e</a>
-</td>
-<td>
-Tess Brodie
-</td>
-<td>
-2020-07-07
-</td>
-<td>
-wflow_publish(“analysis/index.Rmd”, all = TRUE, force = TRUE,
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/tessbrodie/myproject/d343510c2336351c47ee83cbab97da8becf7ed5b/docs/0-preparation.html" target="_blank">d343510</a>
-</td>
-<td>
-Tess Brodie
-</td>
-<td>
-2020-07-03
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/tessbrodie/myproject/803452c7f39207a567a7c0a7ad209b62b9191674/docs/0-preparation.html" target="_blank">803452c</a>
-</td>
-<td>
-Tess Brodie
-</td>
-<td>
-2020-07-03
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/tessbrodie/myproject/9b8a62113c179fa460b2c2ed5f87b71c52cd9377/docs/0-preparation.html" target="_blank">9b8a621</a>
-</td>
-<td>
-Tess Brodie
-</td>
-<td>
-2020-07-02
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/tessbrodie/myproject/9d6b181e4d20c9d266a6a65a3bb6dbd1ba0933fc/docs/0-preparation.html" target="_blank">9d6b181</a>
-</td>
-<td>
-Tess Brodie
-</td>
-<td>
-2020-07-02
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/tessbrodie/myproject/blob/2486ce5bec41de4893e4ee8681a259bd3b792294/analysis/0-preparation.Rmd" target="_blank">2486ce5</a>
-</td>
-<td>
-Tess Brodie
-</td>
-<td>
-2020-07-02
-</td>
-<td>
-Publish the initial files for myproject PKM2
 </td>
 </tr>
 </tbody>
@@ -819,112 +684,288 @@ Publish the initial files for myproject PKM2
 </div>
 </div>
 </div>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
 <div id="load-packages" class="section level3">
 <h3>Load packages</h3>
 <pre class="r"><code>library(CATALYST)
 library(dplyr)
+library(flowCore)
+library(ggplot2)
+library(diffcyt)
+library(cowplot)
+library(viridis)
+library(RColorBrewer)
 library(workflowr)</code></pre>
 </div>
 <div id="load-data" class="section level3">
 <h3>Load data</h3>
-<pre class="r"><code># read in metadata table &amp; fix factor levels
-md &lt;- read.csv(file.path(&quot;data&quot;, &quot;metadata.csv&quot;), sep = &quot;;&quot;)
-md &lt;- rename(md, 
-    file_name = file, sample_id = sampleID, 
-    condition = cond1, patient_id = patientID)
-md$condition &lt;- factor(md$condition, unique(md$condition))
-sids &lt;- md$sample_id[order(md$condition)]
-pids &lt;- unique(md$patient_id)
-md$sample_id &lt;- factor(sids, sids)
-md$patient_id &lt;- factor(pids, pids)
+<pre class="r"><code>sce &lt;- readRDS(file.path(&quot;output&quot;, &quot;sce.rds&quot;))</code></pre>
+</div>
+</div>
+<div id="differential-state-analysis-on-bmdm" class="section level2">
+<h2>Differential State analysis on BMDM</h2>
+<p>We see that the BMDM have increasing amounts of PKM2 over time after PhX and we want to see if the increase in PKM2 expression is associated with other significant phenotypic changes in this subset.</p>
+<pre class="r"><code># create design matrix
+design &lt;- createDesignMatrix(ei(sce), &quot;condition&quot;)
+colnames(design) &lt;- gsub(&quot;condition&quot;, &quot;&quot;, colnames(design))
 
-# construct &#39;SingleCellExperiment&#39;
-panel &lt;- read.csv(file.path(&quot;data&quot;, &quot;panel.csv&quot;), sep = &quot;;&quot;)
-sce &lt;- prepData(file.path(&quot;data&quot;, &quot;fcs&quot;), panel, md)</code></pre>
+# run DS analysis for control vs. each timepoint
+for (i in colnames(design)[-1]) {
+  # create contrast matrix
+  contrast &lt;- createContrast(as.numeric(colnames(design) == i))
+    
+  # run DS analysis &amp; extract results table
+  res_DS &lt;- diffcyt(sce, clustering_to_use = &quot;mm&quot;,
+                  analysis_type = &quot;DS&quot;, method_DS = &quot;diffcyt-DS-limma&quot;,
+                  design = design, contrast = contrast, verbose = FALSE)
+
+  # extract results table
+  tbl_DS &lt;- rowData(res_DS$res)
+  
+   # include all results for selected cluster
+  k &lt;- metadata(res_DS$res)$clustering_name
+  sub1 &lt;- filterSCE(sce, cluster_id == &quot;BMDM&quot;, k = k)
+  
+  sub1
+  
+
+  # write table to .csv
+    fn &lt;- file.path(&quot;output&quot;, sprintf(&quot;DS-results_%s.csv&quot;, i))
+    write.csv(tbl_DS, fn, row.names = FALSE)
+    
+
+   # subset control and timepoint of interest
+    sub &lt;- filterSCE(sub1, condition %in% c(&quot;control&quot;, !!i))
+    
+    
+  # plot differential heatmap
+    p &lt;- plotDiffHeatmap(sub, tbl_DS, all = TRUE, col_anno = &quot;condition&quot;)
+    cat(&quot;## &quot;, i, &quot;\n&quot;); print(p); cat(&quot;\n\n&quot;)
+} </code></pre>
+<pre><code>Warning: Zero sample variances detected, have been offset away from zero</code></pre>
+<pre><code>##  3hours </code></pre>
+<pre><code>Warning: Zero sample variances detected, have been offset away from zero</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-2-1.svg" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>##  6hours </code></pre>
+<pre><code>Warning: Zero sample variances detected, have been offset away from zero</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-2-2.svg" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>##  12hours </code></pre>
+<pre><code>Warning: Zero sample variances detected, have been offset away from zero</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-2-3.svg" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>##  24hours </code></pre>
+<pre><code>Warning: Zero sample variances detected, have been offset away from zero</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-2-4.svg" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>##  48hours </code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-2-5.svg" width="672" style="display: block; margin: auto;" /></p>
+<div id="plot-all-timepoints-and-significant-changes-in-bmdm" class="section level3">
+<h3>Plot all timepoints and significant changes in BMDM</h3>
+<p>This needs editing because now it is showing all timepoints, but the significance shown is for control vs 48 hours. It is very tricky to show the p values for each condition in one graph… I’m not sure how that could be done. Maybe the heatmap of the target expression over time and the fold change is enough and we could report the P values for each timepoint in a table? Or we compare the control to all the other conditions globally… This is to be discussed.</p>
+<pre class="r"><code># create design matrix
+design &lt;- createDesignMatrix(ei(sce), &quot;condition&quot;)
+colnames(design) &lt;- gsub(&quot;condition&quot;, &quot;&quot;, colnames(design))
+
+# run DS analysis for control vs. each timepoint
+for (i in colnames(design)[-1]) 
+  # create contrast matrix
+  contrast &lt;- createContrast(as.numeric(colnames(design) == i))
+    
+  # run DS analysis &amp; extract results table
+  res_DS &lt;- diffcyt(sce, clustering_to_use = &quot;mm&quot;,
+                  analysis_type = &quot;DS&quot;, method_DS = &quot;diffcyt-DS-limma&quot;,
+                  design = design, contrast = contrast, verbose = FALSE)</code></pre>
+<pre><code>Warning: Zero sample variances detected, have been offset away from zero</code></pre>
+<pre class="r"><code>  # extract results table
+  tbl_DS &lt;- rowData(res_DS$res)
+  
+   # include all results for selected cluster
+  k &lt;- metadata(res_DS$res)$clustering_name
+  sub2 &lt;- filterSCE(sce, cluster_id == &quot;BMDM&quot;, k = k)
+  
+  sub2</code></pre>
+<pre><code>class: SingleCellExperiment 
+dim: 33 37685 
+metadata(4): experiment_info cluster_codes SOM_codes delta_area
+assays(2): counts exprs
+rownames(33): Ly6G CD11c ... I_A_I_E CD192
+rowData names(4): channel_name marker_name marker_class
+  used_for_clustering
+colnames: NULL
+colData names(4): sample_id condition patient_id cluster_id
+reducedDimNames(2): UMAP TSNE
+altExpNames(0):</code></pre>
+<pre class="r"><code>  # write table to .csv (doesnt work here)
+    fn &lt;- file.path(&quot;output&quot;, sprintf(&quot;DS-results_%s.csv&quot;, i))
+    write.csv(tbl_DS, fn, row.names = FALSE)
+    
+    
+  # plot differential heatmap
+    p &lt;- plotDiffHeatmap(sub2, tbl_DS, all = TRUE, col_anno = &quot;condition&quot;)
+    cat(&quot;## &quot;, i, &quot;\n&quot;); print(p); cat(&quot;\n\n&quot;)</code></pre>
+<pre><code>##  48hours </code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-3-1.svg" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="cell-counts" class="section level1">
-<h1>Cell counts</h1>
-<pre class="r"><code>plotCounts(sce, group_by = &quot;sample_id&quot;, color_by = &quot;condition&quot;)</code></pre>
-<p><img src="figure/0-preparation.Rmd/plotCounts-1.svg" width="576" style="display: block; margin: auto;" /></p>
+<div id="filter-on-bmdm" class="section level3">
+<h3>Filter on BMDM</h3>
+<pre class="r"><code>sceB &lt;- filterSCE(sce, k = &quot;mm&quot;,
+               cluster_id %in% &quot;BMDM&quot;)
+
+plot_grid(
+  plotDR(sce, dr= &quot;TSNE&quot;, color_by = &quot;mm&quot;),
+  plotDR(sceB, dr= &quot;TSNE&quot;, color_by = &quot;mm&quot;))</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-4-1.svg" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="pseudobulk-level-mds-plot" class="section level1">
-<h1>Pseudobulk-level MDS plot</h1>
-<pre class="r"><code>pbMDS(sce)</code></pre>
-<p><img src="figure/0-preparation.Rmd/pbMDS-1.svg" width="768" style="display: block; margin: auto;" /></p>
-<div id="split-by-condition" class="section level2 tabset">
-<h2>…split by condition</h2>
-<pre class="r"><code>for (i in levels(sce$condition)[-1]) {
-    sub &lt;- filterSCE(sce, condition %in% c(&quot;control&quot;, !!i))
-    cat(&quot;### &quot;, i, &quot;\n&quot;); print(pbMDS(sub)); cat(&quot;\n\n&quot;)
+<div id="target-expression-in-bmdm-for-targets-that-change-significantly-over-time" class="section level3">
+<h3>Target expression in BMDM for Targets that change significantly over time</h3>
+<pre class="r"><code>plotExprHeatmap(sceB, features = c(&quot;PKM2&quot;, &quot;CD93&quot;, &quot;CD115&quot;, &quot;CD49b_DX5&quot;, &quot;CD161&quot;, &quot;CD80&quot;, &quot;I_A_I_E&quot;, &quot;CD196&quot;, &quot;Arginase_1&quot;, &quot;CD64&quot;, &quot;CD274&quot;, &quot;CD86&quot;),
+    row_anno = FALSE,   # don&#39;t annotate samples
+    row_clust = FALSE,  # keep samples in original order
+    col_clust = TRUE,  # keep markers in original order
+    bin_anno = FALSE,   # don&#39;t annotate bins
+    bars = FALSE,       # don&#39;t include sample sizes
+    scale = &quot;last&quot;)     # aggregate, then scale</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-5-1.svg" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="tsne-of-bmdms-colored-by-condition" class="section level2">
+<h2>TSNE of BMDMs colored by condition</h2>
+<pre class="r"><code>sceB &lt;- runDR(sceB, dr = &quot;TSNE&quot;, features = NULL)
+plotDR(sceB, dr = &quot;TSNE&quot;, color_by = &quot;condition&quot;)</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-6-1.svg" width="672" style="display: block; margin: auto;" /></p>
+<p>##Facet by condition</p>
+<pre class="r"><code>plotDR(sceB, dr = &quot;TSNE&quot;, color_by = &quot;condition&quot;, facet_by = &quot;condition&quot;)</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-7-1.svg" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="plot-bmdm-targets-that-change-significantly-in-bmdms-tsne" class="section level2">
+<h2>Plot BMDM targets that change significantly in BMDMs TSNE</h2>
+<pre class="r"><code>p &lt;- plotDR(sceB, dr = &quot;TSNE&quot;, color_by = c(&quot;PKM2&quot;, &quot;CD93&quot;, &quot;CD115&quot;, &quot;CD49b_DX5&quot;, &quot;CD161&quot;, &quot;CD80&quot;, &quot;I_A_I_E&quot;, &quot;CD196&quot;, &quot;Arginase_1&quot;, &quot;CD64&quot;, &quot;CD274&quot;, &quot;CD86&quot;))
+p$facet$params$ncol &lt;- 4; p</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/plotDR-expression-1.svg" width="1152" style="display: block; margin: auto;" /></p>
+</div>
+<div id="number-of-bmdm-per-sample" class="section level2">
+<h2>Number of BMDM per sample</h2>
+<pre class="r"><code>plotCounts(sceB, 
+           group_by = &quot;sample_id&quot;, 
+           color_by = &quot;condition&quot;)</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-8-1.svg" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="cluster-bmdm-into-subsets" class="section level2">
+<h2>Cluster BMDM into subsets</h2>
+<pre class="r"><code>sceB &lt;- cluster(sceB, maxK = 10)</code></pre>
+</div>
+<div id="plot-expression-heatmap-of-bmdm-subsets" class="section level2">
+<h2>PLot expression heatmap of BMDM subsets</h2>
+<pre class="r"><code>plotExprHeatmap(sceB, features = type_markers(sce), 
+    by = &quot;cluster_id&quot;, k = &quot;meta10&quot;, row_anno = FALSE, bars = TRUE)</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/plotExprHeatmap-1.svg" width="576" style="display: block; margin: auto;" /></p>
+</div>
+<div id="plot-multi-heatmap-with-bmdm-subsets" class="section level2">
+<h2>Plot multi heatmap with BMDM subsets</h2>
+<pre class="r"><code>plotMultiHeatmap(sceB, 
+                 hm1 = &quot;type&quot;, hm2 = &quot;state&quot;, 
+                 k = &quot;meta10&quot;, row_anno = FALSE,
+                 col_dend = c(FALSE, FALSE))</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-9-1.svg" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="bmdm-clusters-overlaid-on-tsne-plot" class="section level2">
+<h2>10 BMDM clusters overlaid on TSNE plot</h2>
+<pre class="r"><code>plotDR(sceB, dr = &quot;TSNE&quot;, color_by = &quot;meta10&quot;)</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-10-1.svg" width="672" style="display: block; margin: auto;" /></p>
+<p>##Differential Abundances analysis with BMDM subsets</p>
+</div>
+<div id="da-analysis" class="section level1 tabset">
+<h1>DA analysis</h1>
+<pre class="r"><code># create design matrix
+design &lt;- createDesignMatrix(ei(sceB), &quot;condition&quot;)
+colnames(design) &lt;- gsub(&quot;condition&quot;, &quot;&quot;, colnames(design))
+
+# run DA analysis for control vs. each timepoint
+for (i in colnames(design)[-1]) {
+    # create contrast matrix
+    contrast &lt;- createContrast(as.numeric(colnames(design) == i))
+    
+    # run DA analysis
+    res &lt;- diffcyt(sceB, clustering_to_use = &quot;meta10&quot;,
+        analysis_type = &quot;DA&quot;, method_DA = &quot;diffcyt-DA-edgeR&quot;,
+        design = design, contrast = contrast, verbose = FALSE)
+    
+    # extract results table
+    tbl &lt;- rowData(res$res)
+    
+    # write table to .csv
+    fn &lt;- file.path(&quot;output&quot;, sprintf(&quot;DA-resultsBMDM_%s.csv&quot;, i))
+    write.csv(tbl, fn, row.names = FALSE)
+    
+    # subset control and timepoint of interest
+    sub &lt;- filterSCE(sceB, condition %in% c(&quot;control&quot;, !!i))
+    
+    # plot differential heatmap
+    p &lt;- plotDiffHeatmap(sub, tbl, all = TRUE, col_anno = &quot;condition&quot;)
+    cat(&quot;## &quot;, i, &quot;\n&quot;); print(p); cat(&quot;\n\n&quot;)
 }</code></pre>
-<div id="hours" class="section level3">
-<h3>3hours</h3>
-<p><img src="figure/0-preparation.Rmd/pbMDS-condition-1.svg" width="672" style="display: block; margin: auto;" /></p>
+<div id="hours" class="section level2">
+<h2>3hours</h2>
+<p><img src="figure/5-BMDM_PKM2.Rmd/da-1.svg" width="768" style="display: block; margin: auto;" /></p>
 </div>
-<div id="hours-1" class="section level3">
-<h3>6hours</h3>
-<p><img src="figure/0-preparation.Rmd/pbMDS-condition-2.svg" width="672" style="display: block; margin: auto;" /></p>
+<div id="hours-1" class="section level2">
+<h2>6hours</h2>
+<p><img src="figure/5-BMDM_PKM2.Rmd/da-2.svg" width="768" style="display: block; margin: auto;" /></p>
 </div>
-<div id="hours-2" class="section level3">
-<h3>12hours</h3>
-<p><img src="figure/0-preparation.Rmd/pbMDS-condition-3.svg" width="672" style="display: block; margin: auto;" /></p>
+<div id="hours-2" class="section level2">
+<h2>12hours</h2>
+<p><img src="figure/5-BMDM_PKM2.Rmd/da-3.svg" width="768" style="display: block; margin: auto;" /></p>
 </div>
-<div id="hours-3" class="section level3">
-<h3>24hours</h3>
-<p><img src="figure/0-preparation.Rmd/pbMDS-condition-4.svg" width="672" style="display: block; margin: auto;" /></p>
+<div id="hours-3" class="section level2">
+<h2>24hours</h2>
+<p><img src="figure/5-BMDM_PKM2.Rmd/da-4.svg" width="768" style="display: block; margin: auto;" /></p>
 </div>
-<div id="hours-4" class="section level3">
-<h3>48hours</h3>
-<p><img src="figure/0-preparation.Rmd/pbMDS-condition-5.svg" width="672" style="display: block; margin: auto;" /></p>
-</div>
-</div>
-</div>
-<div id="median-marker-expression" class="section level1">
-<h1>Median marker expression</h1>
-<pre class="r"><code>plotExprHeatmap(sce, scale = &quot;last&quot;, q = 0, 
-    by = &quot;sample_id&quot;, row_anno = &quot;condition&quot;)</code></pre>
-<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-1.svg" width="960" style="display: block; margin: auto;" /></p>
-<div id="split-by-condition-1" class="section level2 tabset">
-<h2>…split by condition</h2>
-<pre class="r"><code>for (i in levels(sce$condition)[-1]) {
-    sub &lt;- filterSCE(sce, condition %in% c(&quot;control&quot;, !!i))
-    p &lt;- plotExprHeatmap(sub, scale = &quot;last&quot;, q = 0, 
-        by = &quot;sample_id&quot;, row_anno = &quot;condition&quot;)
-    cat(&quot;### &quot;, i, &quot;\n&quot;); print(p); cat(&quot;\n\n&quot;)
-}</code></pre>
-<div id="hours-5" class="section level3">
-<h3>3hours</h3>
-<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-condition-1.svg" width="960" style="display: block; margin: auto;" /></p>
-</div>
-<div id="hours-6" class="section level3">
-<h3>6hours</h3>
-<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-condition-2.svg" width="960" style="display: block; margin: auto;" /></p>
-</div>
-<div id="hours-7" class="section level3">
-<h3>12hours</h3>
-<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-condition-3.svg" width="960" style="display: block; margin: auto;" /></p>
-</div>
-<div id="hours-8" class="section level3">
-<h3>24hours</h3>
-<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-condition-4.svg" width="960" style="display: block; margin: auto;" /></p>
-</div>
-<div id="hours-9" class="section level3">
-<h3>48hours</h3>
-<p><img src="figure/0-preparation.Rmd/plotExprHeatmap-condition-5.svg" width="960" style="display: block; margin: auto;" /></p>
-</div>
-</div>
-</div>
-<div id="clustering" class="section level1">
-<h1>Clustering</h1>
-<pre class="r"><code>sce &lt;- cluster(sce, maxK = 25)</code></pre>
-</div>
-<div id="dimensionality-reduction" class="section level1">
-<h1>Dimensionality reduction</h1>
-<pre class="r"><code>sce &lt;- runDR(sce, dr = &quot;UMAP&quot;, cells = 1e3)
-sce &lt;- runDR(sce, dr = &quot;TSNE&quot;, cells = 1000)</code></pre>
-<div id="save-sce-to-.rds" class="section level3">
-<h3>Save SCE to .rds</h3>
-<pre class="r"><code>saveRDS(sce, file.path(&quot;output&quot;, &quot;sce0.rds&quot;))</code></pre>
+<div id="hours-4" class="section level2">
+<h2>48hours</h2>
+<p><img src="figure/5-BMDM_PKM2.Rmd/da-5.svg" width="768" style="display: block; margin: auto;" /></p>
+<p>##Differential state Analysis</p>
+<pre class="r"><code># create design matrix
+design &lt;- createDesignMatrix(ei(sceB), &quot;condition&quot;)
+colnames(design) &lt;- gsub(&quot;condition&quot;, &quot;&quot;, colnames(design))
+
+# run DS analysis for control vs. each timepoint
+for (i in colnames(design)[-1]) {
+  # create contrast matrix
+  contrast &lt;- createContrast(as.numeric(colnames(design) == i))
+    
+  # run DS analysis &amp; extract results table
+  res_DS &lt;- diffcyt(sce, clustering_to_use = &quot;meta10&quot;,
+                  analysis_type = &quot;DS&quot;, method_DS = &quot;diffcyt-DS-limma&quot;,
+                  design = design, contrast = contrast, verbose = FALSE)
+
+  # extract results table
+  tbl_DS &lt;- rowData(res_DS$res)
+
+  # write table to .csv
+    fn &lt;- file.path(&quot;output&quot;, sprintf(&quot;DS-resultsBMDM_%s.csv&quot;, i))
+    write.csv(tbl_DS, fn, row.names = FALSE)
+    
+  # subset control and timepoint of interest
+    sub &lt;- filterSCE(sceB, condition %in% c(&quot;control&quot;, !!i))
+    
+  # plot differential heatmap
+    p &lt;- plotDiffHeatmap(sub, tbl_DS, all = TRUE, col_anno = &quot;condition&quot;)
+    cat(&quot;## &quot;, i, &quot;\n&quot;); print(p); cat(&quot;\n\n&quot;)
+} </code></pre>
+<pre><code>Warning: Zero sample variances detected, have been offset away from zero</code></pre>
+<pre><code>##  3hours </code></pre>
+<pre><code>Warning: Zero sample variances detected, have been offset away from zero</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-11-1.svg" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>##  6hours </code></pre>
+<pre><code>Warning: Zero sample variances detected, have been offset away from zero</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-11-2.svg" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>##  12hours </code></pre>
+<pre><code>Warning: Zero sample variances detected, have been offset away from zero</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-11-3.svg" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>##  24hours </code></pre>
+<pre><code>Warning: Zero sample variances detected, have been offset away from zero</code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-11-4.svg" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>##  48hours </code></pre>
+<p><img src="figure/5-BMDM_PKM2.Rmd/unnamed-chunk-11-5.svg" width="672" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -949,81 +990,85 @@ attached base packages:
 [8] methods   base     
 
 other attached packages:
- [1] dplyr_0.8.5                 CATALYST_1.12.1            
- [3] SingleCellExperiment_1.9.3  SummarizedExperiment_1.17.5
- [5] DelayedArray_0.13.12        matrixStats_0.56.0         
- [7] Biobase_2.47.3              GenomicRanges_1.39.3       
- [9] GenomeInfoDb_1.23.17        IRanges_2.21.8             
-[11] S4Vectors_0.25.15           BiocGenerics_0.33.3        
-[13] workflowr_1.6.2            
+ [1] RColorBrewer_1.1-2          viridis_0.5.1              
+ [3] viridisLite_0.3.0           cowplot_1.0.0              
+ [5] diffcyt_1.7.6               ggplot2_3.3.0              
+ [7] flowCore_1.99.20            dplyr_0.8.5                
+ [9] CATALYST_1.12.1             SingleCellExperiment_1.9.3 
+[11] SummarizedExperiment_1.17.5 DelayedArray_0.13.12       
+[13] matrixStats_0.56.0          Biobase_2.47.3             
+[15] GenomicRanges_1.39.3        GenomeInfoDb_1.23.17       
+[17] IRanges_2.21.8              S4Vectors_0.25.15          
+[19] BiocGenerics_0.33.3         workflowr_1.6.2            
 
 loaded via a namespace (and not attached):
   [1] readxl_1.3.1                backports_1.1.6            
   [3] circlize_0.4.8              drc_3.0-1                  
   [5] plyr_1.8.6                  igraph_1.2.5               
   [7] ConsensusClusterPlus_1.51.0 splines_4.0.0              
-  [9] flowCore_1.99.20            BiocParallel_1.21.3        
- [11] ggplot2_3.3.0               scater_1.16.1              
- [13] TH.data_1.0-10              digest_0.6.25              
- [15] htmltools_0.4.0             viridis_0.5.1              
- [17] fansi_0.4.1                 magrittr_1.5               
- [19] CytoML_1.99.13              cluster_2.1.0              
- [21] openxlsx_4.1.4              ComplexHeatmap_2.3.4       
- [23] RcppParallel_5.0.0          sandwich_2.5-1             
- [25] flowWorkspace_3.99.22       cytolib_1.99.28            
- [27] jpeg_0.1-8.1                colorspace_1.4-1           
- [29] ggrepel_0.8.2               haven_2.2.0                
- [31] xfun_0.13                   crayon_1.3.4               
- [33] RCurl_1.98-1.2              jsonlite_1.6.1             
- [35] hexbin_1.28.1               graph_1.65.3               
- [37] survival_3.1-12             zoo_1.8-7                  
- [39] glue_1.4.0                  gtable_0.3.0               
- [41] nnls_1.4                    zlibbioc_1.33.1            
- [43] XVector_0.27.2              GetoptLong_0.1.8           
- [45] ggcyto_1.15.4               car_3.0-7                  
- [47] BiocSingular_1.3.2          Rgraphviz_2.31.0           
- [49] shape_1.4.4                 abind_1.4-5                
- [51] scales_1.1.0                mvtnorm_1.1-0              
+  [9] BiocParallel_1.21.3         scater_1.16.1              
+ [11] TH.data_1.0-10              digest_0.6.25              
+ [13] htmltools_0.4.0             fansi_0.4.1                
+ [15] magrittr_1.5                CytoML_1.99.13             
+ [17] cluster_2.1.0               limma_3.43.8               
+ [19] openxlsx_4.1.4              ComplexHeatmap_2.3.4       
+ [21] RcppParallel_5.0.0          sandwich_2.5-1             
+ [23] flowWorkspace_3.99.22       cytolib_1.99.28            
+ [25] jpeg_0.1-8.1                colorspace_1.4-1           
+ [27] ggrepel_0.8.2               haven_2.2.0                
+ [29] xfun_0.13                   crayon_1.3.4               
+ [31] RCurl_1.98-1.2              jsonlite_1.6.1             
+ [33] hexbin_1.28.1               graph_1.65.3               
+ [35] lme4_1.1-23                 survival_3.1-12            
+ [37] zoo_1.8-7                   glue_1.4.0                 
+ [39] gtable_0.3.0                nnls_1.4                   
+ [41] zlibbioc_1.33.1             XVector_0.27.2             
+ [43] GetoptLong_0.1.8            ggcyto_1.15.4              
+ [45] car_3.0-7                   BiocSingular_1.3.2         
+ [47] Rgraphviz_2.31.0            shape_1.4.4                
+ [49] abind_1.4-5                 scales_1.1.0               
+ [51] mvtnorm_1.1-0               edgeR_3.29.1               
  [53] Rcpp_1.0.4.6                plotrix_3.7-8              
- [55] viridisLite_0.3.0           clue_0.3-57                
- [57] foreign_0.8-78              rsvd_1.0.3                 
- [59] FlowSOM_1.19.4              tsne_0.1-3                 
- [61] RColorBrewer_1.1-2          ellipsis_0.3.0             
- [63] farver_2.0.3                pkgconfig_2.0.3            
- [65] XML_3.99-0.3                uwot_0.1.8                 
- [67] labeling_0.3                tidyselect_1.0.0           
- [69] rlang_0.4.5                 reshape2_1.4.4             
- [71] later_1.0.0                 munsell_0.5.0              
- [73] cellranger_1.1.0            tools_4.0.0                
- [75] cli_2.0.2                   ggridges_0.5.2             
- [77] evaluate_0.14               stringr_1.4.0              
- [79] yaml_2.2.1                  knitr_1.28                 
- [81] fs_1.4.1                    zip_2.0.4                  
- [83] purrr_0.3.4                 RBGL_1.63.1                
- [85] whisker_0.4                 compiler_4.0.0             
- [87] rstudioapi_0.11             beeswarm_0.2.3             
- [89] curl_4.3                    png_0.1-7                  
- [91] tibble_3.0.0                stringi_1.4.6              
- [93] RSpectra_0.16-0             forcats_0.5.0              
- [95] lattice_0.20-41             Matrix_1.2-18              
- [97] vctrs_0.2.4                 pillar_1.4.3               
- [99] lifecycle_0.2.0             GlobalOptions_0.1.1        
-[101] RcppAnnoy_0.0.16            BiocNeighbors_1.5.6        
-[103] data.table_1.12.8           cowplot_1.0.0              
-[105] bitops_1.0-6                irlba_2.3.3                
-[107] httpuv_1.5.2                R6_2.4.1                   
-[109] latticeExtra_0.6-29         promises_1.1.0             
-[111] gridExtra_2.3               RProtoBufLib_1.99.8        
-[113] rio_0.5.16                  vipor_0.4.5                
-[115] codetools_0.2-16            MASS_7.3-51.5              
-[117] gtools_3.8.2                assertthat_0.2.1           
-[119] rprojroot_1.3-2             rjson_0.2.20               
-[121] multcomp_1.4-13             GenomeInfoDbData_1.2.3     
-[123] hms_0.5.3                   ncdfFlow_2.33.2            
-[125] grid_4.0.0                  rmarkdown_2.1              
-[127] DelayedMatrixStats_1.9.1    carData_3.0-3              
-[129] Rtsne_0.15                  git2r_0.27.1               
-[131] base64enc_0.1-3             ggbeeswarm_0.6.0           </code></pre>
+ [55] clue_0.3-57                 foreign_0.8-78             
+ [57] rsvd_1.0.3                  FlowSOM_1.19.4             
+ [59] tsne_0.1-3                  ellipsis_0.3.0             
+ [61] farver_2.0.3                pkgconfig_2.0.3            
+ [63] XML_3.99-0.3                locfit_1.5-9.4             
+ [65] labeling_0.3                tidyselect_1.0.0           
+ [67] rlang_0.4.5                 reshape2_1.4.4             
+ [69] later_1.0.0                 munsell_0.5.0              
+ [71] cellranger_1.1.0            tools_4.0.0                
+ [73] cli_2.0.2                   ggridges_0.5.2             
+ [75] evaluate_0.14               stringr_1.4.0              
+ [77] yaml_2.2.1                  knitr_1.28                 
+ [79] fs_1.4.1                    zip_2.0.4                  
+ [81] purrr_0.3.4                 nlme_3.1-147               
+ [83] RBGL_1.63.1                 compiler_4.0.0             
+ [85] rstudioapi_0.11             beeswarm_0.2.3             
+ [87] curl_4.3                    png_0.1-7                  
+ [89] statmod_1.4.34              tibble_3.0.0               
+ [91] stringi_1.4.6               forcats_0.5.0              
+ [93] lattice_0.20-41             Matrix_1.2-18              
+ [95] nloptr_1.2.2.1              vctrs_0.2.4                
+ [97] pillar_1.4.3                lifecycle_0.2.0            
+ [99] GlobalOptions_0.1.1         BiocNeighbors_1.5.6        
+[101] data.table_1.12.8           bitops_1.0-6               
+[103] irlba_2.3.3                 httpuv_1.5.2               
+[105] R6_2.4.1                    latticeExtra_0.6-29        
+[107] promises_1.1.0              gridExtra_2.3              
+[109] RProtoBufLib_1.99.8         rio_0.5.16                 
+[111] vipor_0.4.5                 codetools_0.2-16           
+[113] boot_1.3-24                 MASS_7.3-51.5              
+[115] gtools_3.8.2                assertthat_0.2.1           
+[117] rprojroot_1.3-2             rjson_0.2.20               
+[119] withr_2.2.0                 multcomp_1.4-13            
+[121] GenomeInfoDbData_1.2.3      hms_0.5.3                  
+[123] ncdfFlow_2.33.2             grid_4.0.0                 
+[125] tidyr_1.0.2                 minqa_1.2.4                
+[127] rmarkdown_2.1               DelayedMatrixStats_1.9.1   
+[129] carData_3.0-3               Rtsne_0.15                 
+[131] git2r_0.27.1                base64enc_0.1-3            
+[133] ggbeeswarm_0.6.0           </code></pre>
 </div>
 </div>
 </div>
@@ -1086,7 +1131,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2",
+      selectors: "h1,h2,h3",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
